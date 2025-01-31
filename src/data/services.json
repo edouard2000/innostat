@@ -1,0 +1,148 @@
+[
+    {
+      "id": 1,
+      "title": "Data Analysis",
+      "description": "Unlock the potential of your data with our professional data analysis services. We provide insightful, accurate, and customized analysis to help individuals and organizations make informed decisions.",
+      "key_benefits": [
+        "Data-driven decision making",
+        "Customized insights for your business",
+        "Expert analysis using SPSS, RStudio, STATA",
+        "Visualization & reporting for better understanding",
+        "Improved efficiency and productivity"
+      ],
+      "use_cases": [
+        "Businesses looking to optimize performance",
+        "Researchers analyzing complex data",
+        "Organizations making data-driven decisions",
+        "Individuals seeking statistical insights"
+      ],
+      "process": [
+        "Understanding client requirements",
+        "Data collection and cleaning",
+        "Analysis using advanced statistical tools",
+        "Visualization and reporting",
+        "Actionable recommendations"
+      ],
+      "call_to_action": {
+        "text": "Contact Us for a Custom Data Analysis Solution",
+        "link": "/contact"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Graphic Design and Branding",
+      "description": "Stand out with our creative branding solutions. We design high-quality marketing materials, including flyers, banners, posters, and more to enhance your brand identity.",
+      "key_benefits": [
+        "High-quality, professional designs",
+        "Tailored branding to match your identity",
+        "Creative solutions for digital and print",
+        "Enhanced brand recognition",
+        "Engaging visuals for better customer interaction"
+      ],
+      "use_cases": [
+        "Startups looking for a strong brand identity",
+        "Businesses enhancing marketing campaigns",
+        "Organizations creating promotional materials",
+        "Freelancers & personal brands growing their presence"
+      ],
+      "process": [
+        "Understanding brand goals",
+        "Creating design concepts",
+        "Client feedback and revisions",
+        "Finalizing and delivering print-ready files",
+        "Ongoing design support if needed"
+      ],
+      "call_to_action": {
+        "text": "Get Custom Branding Solutions Today",
+        "link": "/contact"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Short Courses and Professional Training",
+      "description": "Enhance your skills with our hands-on training programs in data analysis, graphic design, and data management.",
+      "key_benefits": [
+        "Practical and interactive training",
+        "Expert instructors with real-world experience",
+        "Certifications to boost career opportunities",
+        "Flexible schedules to accommodate learners",
+        "Resources and tools for continued learning"
+      ],
+      "use_cases": [
+        "Students looking to gain industry skills",
+        "Professionals seeking career advancement",
+        "Businesses upskilling their workforce",
+        "Organizations training employees in analytics & design"
+      ],
+      "process": [
+        "Choosing a course that fits your needs",
+        "Attending interactive and hands-on sessions",
+        "Completing assignments and projects",
+        "Receiving feedback and mentorship",
+        "Earning certification upon completion"
+      ],
+      "call_to_action": {
+        "text": "Enroll in a Short Course Today",
+        "link": "/contact"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Data Management Services",
+      "description": "Reliable solutions for organizing, storing, and maintaining data securely and efficiently. We help businesses and organizations streamline data processes.",
+      "key_benefits": [
+        "Secure and efficient data handling",
+        "Easy access to organized information",
+        "Data backup and recovery solutions",
+        "Custom database solutions",
+        "Improved workflow efficiency"
+      ],
+      "use_cases": [
+        "Businesses managing large datasets",
+        "Organizations storing sensitive information",
+        "Researchers handling structured/unstructured data",
+        "Companies needing secure data solutions"
+      ],
+      "process": [
+        "Understanding data management needs",
+        "Designing a structured data system",
+        "Implementing secure storage solutions",
+        "Providing backup and disaster recovery",
+        "Ongoing maintenance and support"
+      ],
+      "call_to_action": {
+        "text": "Optimize Your Data Management Now",
+        "link": "/contact"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Web Design and Development",
+      "description": "Create a modern and responsive website with our web development solutions. We design user-friendly websites that elevate your online presence.",
+      "key_benefits": [
+        "Custom and responsive design",
+        "SEO-friendly development",
+        "Optimized performance and speed",
+        "Mobile-first approach",
+        "Easy content management and scalability"
+      ],
+      "use_cases": [
+        "Businesses establishing an online presence",
+        "Startups launching digital platforms",
+        "Organizations needing a modern website",
+        "Freelancers & entrepreneurs showcasing their work"
+      ],
+      "process": [
+        "Understanding client requirements",
+        "Creating design mockups and wireframes",
+        "Development and coding",
+        "Testing and optimization",
+        "Launch and ongoing maintenance"
+      ],
+      "call_to_action": {
+        "text": "Start Building Your Website Today",
+        "link": "/contact"
+      }
+    }
+  ]
+  

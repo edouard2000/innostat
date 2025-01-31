@@ -1,40 +1,62 @@
-import React from 'react';
-import { Typewriter } from 'react-simple-typewriter';
-import { Lightbulb } from 'lucide-react';
+import React from "react";
+import { motion } from "framer-motion";
+import { Typewriter } from "react-simple-typewriter";
+import { Lightbulb, ChevronDown } from "lucide-react";
 
 const HeroSection = () => {
-  const services = ['Design', 'Data Analysis', 'Training Excellence'];
-
   return (
-    <div className="bg-white py-16 px-4">
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="flex justify-center mb-6">
-          <Lightbulb size={48} className="text-[#0f5d9a]" />
-        </div>
+    <section className="w-full min-h-screen flex flex-col items-center justify-center text-white text-center px-6 pb-0 bg-[#0f5d9a]">
+      <motion.h1
+        className="text-4xl md:text-6xl font-extrabold"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1 }}
+      >
+        Think. <span className="text-white">Innovate.</span> Excel.
+      </motion.h1>
 
-        <h1 className="text-3xl font-semibold mb-4">
-          <span className="text-[#0f5d9a]">InnoStat</span>
-          <br />
-          Your one-stop solution for{' '}
-          <span className="text-[#0f5d9a]">
-            <Typewriter
-              words={services}
-              loop={0}
-              cursor
-              cursorStyle="_"
-              typeSpeed={70}
-              deleteSpeed={50}
-              delaySpeed={2000}
-            />
-          </span>
-        </h1>
-        
-        <p className="text-gray-600 text-lg mt-6 max-w-2xl mx-auto">
-          Providing exceptional design services, professional data management and analysis, 
-          and top-notch training courses tailored to your needs.
-        </p>
-      </div>
-    </div>
+      <motion.h2
+        className="text-lg md:text-2xl font-medium mt-2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+      >
+        We are{" "}
+        <span className="text-white">
+          <Typewriter
+            words={["Creative", "Reliable", "Impactful"]}
+            loop={true}
+            cursor
+            cursorStyle="_"
+            typeSpeed={90}
+            deleteSpeed={50}
+            delaySpeed={1000}
+          />
+        </span>
+      </motion.h2>
+
+      {/* Animated Lightbulb Icon */}
+      <motion.div
+        className="mt-8 flex flex-col items-center"
+        initial={{ opacity: 0, y: 10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse" }}
+      >
+        <Lightbulb className="w-12 h-12 text-white animate-pulse" />
+        <p className="text-sm text-white mt-2">Innovation starts here.</p>
+      </motion.div>
+
+      {/* Scrolling Indicator */}
+      <motion.div
+        className="absolute bottom-10 flex flex-col items-center cursor-pointer"
+        initial={{ y: 0 }}
+        animate={{ y: 10 }}
+        transition={{ duration: 1, repeat: Infinity, repeatType: "reverse" }}
+      >
+        <ChevronDown className="w-8 h-8 text-white animate-bounce" />
+        <p className="text-sm text-white">Scroll Down</p>
+      </motion.div>
+    </section>
   );
 };
 

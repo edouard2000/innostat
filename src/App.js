@@ -1,12 +1,24 @@
-import React from 'react';
+// App.js
+import React from "react";
+import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
+import Home from "./components/Home";
+import FaqPage from "./pages/FaqPage";
+import ServiceDetailPage from "./pages/ServiceDetailPage";
+import ContactPage from "./pages/ContactPage";
+import Footer from "./components/Footer"; 
 
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="w-full">
       <NavBar />
-      <main className="flex-grow">
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/faq" element={<FaqPage />} />
+        <Route path="/services/:id" element={<ServiceDetailPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+      <Footer /> 
     </div>
   );
 }
