@@ -7,7 +7,6 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 const ContactPage = () => {
   return (
     <section className="w-full min-h-screen bg-[#0f5d9a] text-white flex flex-col items-center justify-center px-8 md:px-16 py-16">
-      {/* Title */}
       <motion.h2
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -16,8 +15,6 @@ const ContactPage = () => {
       >
         Contact Us
       </motion.h2>
-
-      {/* Description */}
       <motion.p
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
