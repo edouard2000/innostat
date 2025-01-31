@@ -1,4 +1,3 @@
-// FaqPage.js
 import React, { useState, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -122,7 +121,9 @@ const FaqItem = ({ question, answer, isOpen, toggle }) => {
         </div>
         <ChevronDown
           size={20}
-          className={`text-white transition-transform duration-300 ${isOpen ? "rotate-180" : "rotate-0"}`}
+          className={`text-white transition-transform duration-300 ${
+            isOpen ? "rotate-180" : "rotate-0"
+          }`}
         />
       </button>
       <AnimatePresence>
