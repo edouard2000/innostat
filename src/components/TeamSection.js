@@ -10,7 +10,7 @@ const teamMembers = [
     role: "Founder & CEO",
     education: "University of Rwanda, Statistics",
     linkedIn: "https://www.linkedin.com/in/edouard-princeton-cs/",
-    avatar: "/logo512.png",
+    avatar: "/josias.jpg",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const teamMembers = [
     role: "Co-Founder & Developer",
     education: "Princeton University, Computer Science and Philosophy",
     linkedIn: "https://www.linkedin.com/in/edouard-princeton-cs/",
-    avatar: "/logo512.png",
+    avatar: "/edouard.png",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const teamMembers = [
     role: "Head of Training",
     education: "University of Rwanda, Statistics",
     linkedIn: "https://www.linkedin.com/in/edouard-princeton-cs/",
-    avatar: "/logo512.png",
+    avatar: "/vet.jpg",
   },
   {
     id: 4,
@@ -50,7 +50,7 @@ const teamMembers = [
     role: "Communications Officer",
     education: "University of Rwanda, Statistics",
     linkedIn: "https://www.linkedin.com/in/edouard-princeton-cs/",
-    avatar: "/logo512.png",
+    avatar: "/noel.jpg",
   },
   {
     id: 7,
