@@ -35,7 +35,6 @@ const HeroSection = () => {
         </span>
       </motion.h2>
 
-      {/* Animated Lightbulb Icon */}
       <motion.div
         className="mt-8 flex flex-col items-center"
         initial={{ opacity: 0, y: 10 }}
@@ -45,8 +44,6 @@ const HeroSection = () => {
         <Lightbulb className="w-12 h-12 text-white animate-pulse" />
         <p className="text-sm text-white mt-2">Innovation starts here.</p>
       </motion.div>
-
-      {/* Scrolling Indicator */}
       <motion.div
         className="absolute bottom-10 flex flex-col items-center cursor-pointer"
         initial={{ y: 0 }}

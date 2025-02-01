@@ -96,8 +96,6 @@ const FaqSection = () => {
         >
           Frequently Asked Questions
         </h2>
-
-        {/* FAQ Items */}
         <div
           className={`
             transform transition-all duration-700 delay-400
@@ -118,8 +116,6 @@ const FaqSection = () => {
             />
           ))}
         </div>
-
-        {/* More Questions Button */}
         <div className="text-center mt-12">
           <a
             href="/faq"
