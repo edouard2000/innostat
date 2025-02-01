@@ -36,14 +36,14 @@ const ContactPage = () => {
             <h3 className="text-2xl font-bold mb-4 text-white">Direct Contact</h3>
             <div className="flex items-center mb-3">
               <Phone className="w-6 h-6 mr-3 text-white" />
-              <span className="text-lg text-white">+250 788 123 456</span>
+              <span className="text-lg text-white">+250 781685464</span>
             </div>
             <div className="flex items-center mb-3">
               <FontAwesomeIcon
                 icon={faWhatsapp}
                 className="w-6 h-6 mr-3 text-green-400"
               />
-              <span className="text-lg text-white">+250 788 123 456</span>
+              <span className="text-lg text-white">+250 781685464</span>
             </div>
             <div className="flex items-center">
               <Mail className="w-6 h-6 mr-3 text-white" />
