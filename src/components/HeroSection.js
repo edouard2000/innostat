@@ -5,7 +5,7 @@ import { Lightbulb, ChevronDown } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="w-full min-h-screen flex flex-col items-center justify-center text-white text-center px-6 pb-0 bg-[#0f5d9a]">
+    <section className="w-full min-h-screen flex flex-col items-center justify-center text-white text-center px-6 pb-0 bg-black">
       <motion.h1
         className="text-4xl md:text-6xl font-extrabold"
         initial={{ opacity: 0, y: -20 }}

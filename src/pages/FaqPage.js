@@ -152,7 +152,7 @@ const FaqPage = () => {
   }, []);
 
   return (
-    <section className="w-full min-h-screen bg-[#0f5d9a] px-6 py-20 flex flex-col items-center">
+    <section className="w-full min-h-screen bg-black px-6 py-20 flex flex-col items-center">
       <div className="max-w-3xl w-full">
         <motion.h2
           className="text-4xl font-extrabold text-center mb-12 text-white"

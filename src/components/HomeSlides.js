@@ -21,7 +21,7 @@ const HomeSlides = () => {
   }, []);
 
   return (
-    <section className="w-full h-[50vh] flex flex-col items-center justify-center text-white text-center px-6">
+    <section className="w-full h-[50vh] flex flex-col items-center justify-center text-white text-center px-6 bg-black">
       <div className="relative w-full max-w-2xl">
         <AnimatePresence mode="wait">
           <motion.div
@@ -32,8 +32,12 @@ const HomeSlides = () => {
             transition={{ duration: 1 }}
             className="absolute w-full"
           >
-            <h2 className="text-3xl md:text-5xl font-bold">{services[currentIndex].title}</h2>
-            <p className="text-lg md:text-xl font-light mt-2">{services[currentIndex].description}</p>
+            <h2 className="text-3xl md:text-5xl font-bold">
+              {services[currentIndex].title}
+            </h2>
+            <p className="text-lg md:text-xl font-light mt-2">
+              {services[currentIndex].description}
+            </p>
           </motion.div>
         </AnimatePresence>
       </div>

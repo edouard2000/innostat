@@ -1,4 +1,3 @@
-// NavBar.js
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -73,7 +72,7 @@ const NavBar = () => {
         )}
 
         {link.submenu && isSubMenuOpen && (
-          <div className="fixed left-0 right-0 bg-[#0f5d9a] py-8 z-50">
+          <div className="fixed left-0 right-0 bg-black py-8 z-50">
             <div className="max-w-7xl mx-auto px-4">
               <div className="flex justify-between">
                 {link.submenu.map((subItem) => (
@@ -97,15 +96,16 @@ const NavBar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-[#0f5d9a]/95 shadow-lg" : "bg-[#0f5d9a]"
+        scrolled ? "bg-black/95 shadow-lg" : "bg-black"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        {/* Increased the height from h-16 to h-20 */}
+        <div className="flex items-center justify-between h-20">
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2 group">
               <img
-                src="/INNO3.png"
+                src="/My logo white.png"
                 alt="InnoStat Logo"
                 className="h-8 w-auto transition-transform duration-300 group-hover:scale-105"
               />
@@ -118,7 +118,7 @@ const NavBar = () => {
             ))}
             <Link
               to="/contact"
-              className="ml-6 bg-white text-[#0f5d9a] hover:bg-white/90 px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-md hover:shadow-lg"
+              className="ml-6 bg-white text-black hover:bg-gray-200 px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-md hover:shadow-lg"
             >
               Contact Us
             </Link>

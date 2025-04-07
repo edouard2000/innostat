@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
@@ -64,10 +63,7 @@ const teamMembers = [
 
 const TeamSection = () => {
   return (
-    <section
-      id="team"
-      className="w-full py-16 px-8 md:px-16 bg-[#0f5d9a]"
-    >
+    <section id="team" className="w-full py-16 px-8 md:px-16 bg-black">
       <motion.div
         className="max-w-3xl mx-auto text-center"
         initial={{ opacity: 0, y: -30 }}
@@ -107,7 +103,7 @@ const TeamSection = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => window.open(member.linkedIn, "_blank")}
-                className="mt-4 flex items-center gap-2 px-4 py-2 border border-white/30 rounded-full text-white text-sm transition-colors duration-300 hover:bg-[#0f5d9a] hover:border-[#0f5d9a]"
+                className="mt-4 flex items-center gap-2 px-4 py-2 border border-white/30 rounded-full text-white text-sm transition-colors duration-300 hover:bg-black hover:border-black"
               >
                 <Linkedin className="w-5 h-5" />
                 Connect

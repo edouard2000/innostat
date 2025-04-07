@@ -1,4 +1,3 @@
-// ServiceDetailPage.js
 import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -18,7 +17,7 @@ const ServiceDetailPage = () => {
   }
 
   return (
-    <section className="w-full min-h-screen bg-[#0f5d9a] text-white py-16 px-8 md:px-16">
+    <section className="w-full min-h-screen bg-black text-white py-16 px-8 md:px-16">
       <motion.div
         className="max-w-4xl mx-auto text-center"
         initial={{ opacity: 0, y: -20 }}
@@ -92,7 +91,7 @@ const ServiceDetailPage = () => {
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
               <div className="absolute -left-4 top-0 bg-white rounded-full w-8 h-8 flex items-center justify-center">
-                <span className="text-[#0f5d9a] font-bold">{index + 1}</span>
+                <span className="text-black font-bold">{index + 1}</span>
               </div>
               <div className="bg-white/10 p-4 rounded-lg">
                 <p>{step}</p>
@@ -109,7 +108,7 @@ const ServiceDetailPage = () => {
       >
         <Link
           to="/contact"
-          className="bg-[#0d4e85] text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:bg-[#0f5d9a] transition-all inline-block"
+          className="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:bg-black transition-all inline-block"
         >
           Get in Touch
         </Link>
