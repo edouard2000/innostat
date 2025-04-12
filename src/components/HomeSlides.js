@@ -21,7 +21,7 @@ const HomeSlides = () => {
   }, []);
 
   return (
-    <section className="w-full h-[50vh] flex flex-col items-center justify-center text-white text-center px-6 bg-black">
+    <section className="w-full h-[50vh] flex flex-col items-center justify-center text-[#0e68b1] text-center px-6 bg-white">
       <div className="relative w-full max-w-2xl">
         <AnimatePresence mode="wait">
           <motion.div

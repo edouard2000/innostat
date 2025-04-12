@@ -2,17 +2,15 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const BannerSlider = () => {
-  const slides = [
-    "/slider1.png",
-    "/slider2.png",
-  ];
+  const slides = ["/slider1.png", "/slider2.png"];
   const [currentIndex, setCurrentIndex] = useState(0);
+
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % slides.length);
     }, 10000);
     return () => clearInterval(interval);
-  }, []);
+  }, [slides.length]);
 
   return (
     <section className="w-full relative overflow-hidden" style={{ height: "70vh" }}>
@@ -24,9 +22,9 @@ const BannerSlider = () => {
             initial={{ opacity: 0, x: 200 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -200 }}
-            transition={{ 
+            transition={{
               opacity: { duration: 0.5 },
-              x: { duration: 0.5 }
+              x: { duration: 0.5 },
             }}
           >
             <img

@@ -10,14 +10,14 @@ const ServiceDetailPage = () => {
 
   if (!service) {
     return (
-      <div className="text-center text-white py-20">
+      <div className="text-center text-[#0e68b1] py-20">
         <h1 className="text-4xl font-bold">Service Not Found</h1>
       </div>
     );
   }
 
   return (
-    <section className="w-full min-h-screen bg-black text-white py-16 px-8 md:px-16">
+    <section className="w-full min-h-screen bg-white text-[#0e68b1] py-16 px-8 md:px-16 mt-10">
       <motion.div
         className="max-w-4xl mx-auto text-center"
         initial={{ opacity: 0, y: -20 }}
@@ -26,7 +26,7 @@ const ServiceDetailPage = () => {
       >
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4">{service.title}</h1>
         <p className="text-lg md:text-xl">{service.description}</p>
-        <div className="mt-4 h-1 w-24 bg-white mx-auto"></div>
+        <div className="mt-4 h-1 w-24 bg-[#0e68b1] mx-auto"></div>
       </motion.div>
 
       <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
@@ -41,12 +41,12 @@ const ServiceDetailPage = () => {
             {service.key_benefits.map((benefit, index) => (
               <motion.li
                 key={index}
-                className="flex items-center gap-3 bg-white/10 p-4 rounded-lg"
+                className="flex items-center gap-3 bg-[#0e68b1]/10 p-4 rounded-lg"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <CheckCircle className="w-6 h-6 text-white" />
+                <CheckCircle className="w-6 h-6" />
                 <span>{benefit}</span>
               </motion.li>
             ))}
@@ -63,7 +63,7 @@ const ServiceDetailPage = () => {
             {service.use_cases.map((useCase, index) => (
               <motion.li
                 key={index}
-                className="bg-white/10 p-4 rounded-lg text-lg"
+                className="bg-[#0e68b1]/10 p-4 rounded-lg text-lg"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -74,6 +74,7 @@ const ServiceDetailPage = () => {
           </ul>
         </motion.div>
       </div>
+      
       <motion.div
         className="mt-16 max-w-6xl mx-auto"
         initial={{ opacity: 0, y: 30 }}
@@ -81,7 +82,7 @@ const ServiceDetailPage = () => {
         transition={{ duration: 1 }}
       >
         <h2 className="text-3xl font-bold text-center mb-8">How We Work</h2>
-        <div className="relative border-l-2 border-white/50">
+        <div className="relative border-l-2 border-[#0e68b1]/50">
           {service.process.map((step, index) => (
             <motion.div
               key={index}
@@ -91,15 +92,16 @@ const ServiceDetailPage = () => {
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
               <div className="absolute -left-4 top-0 bg-white rounded-full w-8 h-8 flex items-center justify-center">
-                <span className="text-black font-bold">{index + 1}</span>
+                <span className="text-[#0e68b1] font-bold">{index + 1}</span>
               </div>
-              <div className="bg-white/10 p-4 rounded-lg">
+              <div className="bg-[#0e68b1]/10 p-4 rounded-lg">
                 <p>{step}</p>
               </div>
             </motion.div>
           ))}
         </div>
       </motion.div>
+      
       <motion.div
         className="mt-16 text-center"
         initial={{ opacity: 0, y: 20 }}
@@ -108,7 +110,7 @@ const ServiceDetailPage = () => {
       >
         <Link
           to="/contact"
-          className="bg-black text-white px-8 py-4 rounded-lg text-lg font-semibold shadow-lg hover:bg-black transition-all inline-block"
+          className="border border-[#0e68b1] bg-white text-[#0e68b1] px-8 py-4 rounded-lg text-lg font-semibold shadow-lg transition-all duration-300 hover:bg-[#0e68b1] hover:text-white inline-block"
         >
           Get in Touch
         </Link>

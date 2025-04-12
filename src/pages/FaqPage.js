@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const faqData = [
@@ -98,7 +98,7 @@ const faqData = [
 const FaqItem = ({ question, answer, isOpen, toggle }) => {
   return (
     <motion.div
-      className="border-b border-white/10"
+      className="border-b border-[#0e68b1]/10"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -111,17 +111,17 @@ const FaqItem = ({ question, answer, isOpen, toggle }) => {
           <motion.div
             className="w-3 h-3 rounded-full"
             animate={{
-              backgroundColor: isOpen ? "#ffffff" : "rgba(255,255,255,0.2)",
+              backgroundColor: isOpen ? "#0e68b1" : "rgba(14,104,177,0.2)",
             }}
             transition={{ duration: 0.3 }}
           ></motion.div>
-          <h3 className="text-xl font-medium text-white group-hover:text-white transition-colors">
+          <h3 className="text-xl font-medium text-[#0e68b1] group-hover:text-[#0e68b1] transition-colors">
             {question}
           </h3>
         </div>
         <ChevronDown
           size={20}
-          className={`text-white transition-transform duration-300 ${
+          className={`text-[#0e68b1] transition-transform duration-300 ${
             isOpen ? "rotate-180" : "rotate-0"
           }`}
         />
@@ -135,7 +135,9 @@ const FaqItem = ({ question, answer, isOpen, toggle }) => {
             transition={{ duration: 0.5 }}
             className="overflow-hidden"
           >
-            <p className="pb-5 pl-6 text-gray-200 leading-relaxed">{answer}</p>
+            <p className="pb-5 pl-6 text-[#0e68b1]/80 leading-relaxed">
+              {answer}
+            </p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -152,10 +154,10 @@ const FaqPage = () => {
   }, []);
 
   return (
-    <section className="w-full min-h-screen bg-black px-6 py-20 flex flex-col items-center">
+    <section className="w-full min-h-screen bg-white px-6 py-20 mt-10 flex flex-col items-center">
       <div className="max-w-3xl w-full">
         <motion.h2
-          className="text-4xl font-extrabold text-center mb-12 text-white"
+          className="text-4xl font-extrabold text-center mb-12 text-[#0e68b1]"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
