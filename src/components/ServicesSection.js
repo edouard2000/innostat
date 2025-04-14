@@ -5,31 +5,31 @@ import { Link } from "react-router-dom";
 const services = [
   {
     id: 1,
-    title: "Data Analysis",
+    title: "Data Analysis and Reporting",
     description:
-      "Unlock data-driven insights to optimize business performance.",
+      "Unlock the full potential of your data with our expert data analysis services.",
     link: "/services/1",
-    image: "/data.PNG",
+    image: "/data_analysis&report.png",
   },
   {
     id: 2,
     title: "Graphic Design and Branding",
     description:
-      "Craft a strong brand identity with creative design solutions.",
+      "We specialize in producing high-quality, customized materials including notebooks, flyers, banners, badges, pull-up stands, posters...",
     link: "/services/2",
-    image: "/graphicsDesign.PNG",
+    image: "/branding.png",
   },
   {
     id: 3,
     title: "Short Courses and Professional Training",
-    description: "Empower your team with specialized training and skills.",
+    description: "Boost your career with our expert-led, certified training programs designed for today’s competitive landscape.",
     link: "/services/3",
     image: "/shortcourses.JPG",
   },
   {
     id: 4,
     title: "Data Management Services",
-    description: "Secure and organize your data with expert management.",
+    description: "Streamline your data processes with our reliable and efficient data management solutions.",
     link: "/services/4",
     image: "/datamanagement.JPG",
   },
@@ -37,7 +37,7 @@ const services = [
     id: 5,
     title: "Web Design and Development",
     description:
-      "Build modern, responsive websites to enhance your online presence.",
+      "Create a powerful online presence with our custom web design and development services.",
     link: "/services/5",
     image: "/webdesign.JPG",
   },

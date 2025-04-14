@@ -31,10 +31,10 @@ const teamMembers = [
   {
     id: 4,
     name: "Mfitumukiza Peter",
-    role: "Developer",
-    education: "Rwanda Coding Academy, Software Engineering",
+    role: "Software Engineer",
+    education: "African Leadership University, Software Engineering",
     linkedIn: "https://www.linkedin.com/in/peter-mfitumukiza-78b8a91b4/",
-    avatar: "/logo512.png",
+    avatar: "/peter.jpeg",
   },
   {
     id: 5,

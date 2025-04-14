@@ -21,6 +21,7 @@ const NavBar = () => {
   };
 
   const links = [
+    { href: "/", text: "Home" },
     {
       href: "/services",
       text: "Services",
@@ -104,7 +105,7 @@ const NavBar = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-2 group">
               <img
-                src="/My logo-04.png"
+                src="/logo.PNG"
                 alt="InnoStat Logo"
                 className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
               />
