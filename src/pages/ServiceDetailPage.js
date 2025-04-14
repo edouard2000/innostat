@@ -25,7 +25,7 @@ const ServiceDetailPage = () => {
         transition={{ duration: 1 }}
       >
         <h1 className="text-4xl md:text-6xl font-extrabold mb-4">{service.title}</h1>
-        <p className="text-lg md:text-xl">{service.description}</p>
+        <p className="text-lg md:text-xl">{service.detailed_description}</p>
         <div className="mt-4 h-1 w-24 bg-[#0e68b1] mx-auto"></div>
       </motion.div>
 

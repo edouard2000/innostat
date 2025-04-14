@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const BannerSlider = () => {
-  const slides = ["/slider1.png", "/slider2.png"];
+  const slides = ["/slider1.png", "/slider2.png", "./slider3.png", "slider4.PNG"];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {

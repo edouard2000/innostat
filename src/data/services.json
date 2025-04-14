@@ -1,8 +1,9 @@
 [
     {
       "id": 1,
-      "title": "Data Analysis",
+      "title": "Data Analysis and Reporting",
       "description": "Unlock the potential of your data with our professional data analysis services. We provide insightful, accurate, and customized analysis to help individuals and organizations make informed decisions.",
+      "detailed_description":"Unlock the full potential of your data with our expert data analysis services. Whether you're a student, researcher, consultant companies, government agency, or NGO, we specialize in turning complex datasets into clear, actionable insights tailored to your needs. From academic support to institutional research and program evaluations, our services are designed to help you make data-driven decisions that truly matter. No matter the software, we’ve got you covered, R, Stata, SPSS, Python, Excel, and more. With a commitment to accuracy, clarity, and customization, we ensure every analysis is both meaningful and impactful. Let us help you transform your data into a powerful tool for growth and success.",
       "key_benefits": [
         "Data-driven decision making",
         "Customized insights for your business",
@@ -32,6 +33,7 @@
       "id": 2,
       "title": "Graphic Design and Branding",
       "description": "Stand out with our creative branding solutions. We design high-quality marketing materials, including flyers, banners, posters, and more to enhance your brand identity.",
+      "detailed_description": "We specialize in producing high-quality, customized materials including notebooks, flyers, banners, badges, pull-up stands, certificates, reports, posters, and books. From concept to final print, our creative team ensures your brand stands out with professional and eye-catching designs that leave a lasting impression.",
       "key_benefits": [
         "High-quality, professional designs",
         "Tailored branding to match your identity",
@@ -61,6 +63,7 @@
       "id": 3,
       "title": "Short Courses and Professional Training",
       "description": "Enhance your skills with our hands-on training programs in data analysis, graphic design, and data management.",
+      "detailed_description":"Boost your career with our expert-led, certified training programs designed for today’s competitive landscape. We offer short courses in Data Analysis, Graphic Design, and Data Management, for both the beginners and advanced professionals. Gain practical skills in SPSS, RStudio, and STATA to analyze data with confidence, create visually compelling designs using Adobe Illustrator, and streamline data collection with powerful tools like KOBO Toolbox and SurveyCTO. Our training is designed to be interactive, flexible, and career-focused, empowering you to turn knowledge into impact.",
       "key_benefits": [
         "Practical and interactive training",
         "Expert instructors with real-world experience",
@@ -90,6 +93,7 @@
       "id": 4,
       "title": "Data Management Services",
       "description": "Reliable solutions for organizing, storing, and maintaining data securely and efficiently. We help businesses and organizations streamline data processes.",
+      "detailed_description":"Streamline your data processes with our reliable and efficient data management solutions. We support you in organizing, storing, monitoring, and maintaining your data securely ensuring easy access, accuracy, and long-term reliability. Our services also include the development and programming of digital questionnaires using platforms such as KOBO Toolbox, SurveyCTO, and more. To ensure high-quality data collection, we provide practical training for enumerators on how to effectively use these tools in the field. Whether you're a researcher, consultancy firm, NGO, or institution, we’re here to support your data-driven success.",
       "key_benefits": [
         "Secure and efficient data handling",
         "Easy access to organized information",
@@ -119,6 +123,7 @@
       "id": 5,
       "title": "Web Design and Development",
       "description": "Create a modern and responsive website with our web development solutions. We design user-friendly websites that elevate your online presence.",
+      "detailed_description":"Create a powerful online presence with our custom web design and development services. We craft modern, responsive, and user-friendly websites that align with your brand and business objectives, delivering an exceptional digital experience for your audience.",
       "key_benefits": [
         "Custom and responsive design",
         "SEO-friendly development",
