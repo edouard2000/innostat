@@ -3,7 +3,6 @@ import BannerSlider from "./BannerSlider";
 import HeroSection from "./HeroSection";
 import ServicesSection from "./ServicesSection";
 import AboutUs from "./AboutUs";
-import TeamSection from "./TeamSection";
 
 const Home = () => {
   return (
@@ -14,7 +13,6 @@ const Home = () => {
       <div className="container mx-auto px-4 -mt-4">
         <HeroSection />
         <ServicesSection />
-        <TeamSection />
       </div>
     </div>
   );

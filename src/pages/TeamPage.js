@@ -60,19 +60,27 @@ const teamMembers = [
     linkedIn: "https://www.linkedin.com/in/kwizera-hosiane-a159301a0/",
     avatar: "/logo512.png",
   },
+  {
+    id: 8,
+    name: "Nzamukosha Beatrice",
+    role: "Adviser",
+    education: "University of Rwanda, Medicine",
+    linkedIn: "https://www.linkedin.com/in/beatrice-nzamukosha-17a9481b6",
+    avatar: "/beatrice.jpeg",
+  },
 ];
 
-const TeamSection = () => {
+const TeamPage = () => {
   return (
-    <section id="team" className="w-full py-16 px-8 md:px-16 bg-white">
+    <section id="team" className="w-full py-20 px-8 md:px-16 bg-white">
       <motion.div
         className="max-w-3xl mx-auto text-center"
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-4xl md:text-6xl font-extrabold text-[#0e68b1] mb-4">
-          Our Team
+        <h2 className="text-4xl font-extrabold text-center mt-10 mb-6 text-[#0e68b1]">
+          Meet Our Team
         </h2>
         <p className="text-[#0e68b1]/80 text-lg md:text-xl">
           Passionate professionals committed to excellence.
@@ -94,7 +102,7 @@ const TeamSection = () => {
                 <img
                   src={member.avatar}
                   alt={member.name}
-                  className="w-full h-full object-contain"
+                  className="object-contain"
                 />
               </div>
               <h3 className="mt-4 text-xl font-bold text-white">
@@ -119,4 +127,4 @@ const TeamSection = () => {
   );
 };
 
-export default TeamSection;
+export default TeamPage;
