@@ -33,7 +33,7 @@ const NavBar = () => {
         { href: "/services/5", text: "Web Design and Development" },
       ],
     },
-    { href: "#team", text: "Team", onClick: () => scrollToSection("team") },
+    { href: "/team", text: "Team"},
     { href: "/faq", text: "FAQ" },
   ];
 
