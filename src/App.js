@@ -1,26 +1,36 @@
 // App.js
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import FaqPage from "./pages/FaqPage";
-import ServiceDetailPage from "./pages/ServiceDetailPage";
-import ContactPage from "./pages/ContactPage";
-import TeamPage from "./pages/TeamPage";
-import Footer from "./components/Footer"; 
+import Footer from "./components/Footer";
+import LoadingSpinner from "./components/LoadingSpinner";
+import ErrorBoundary from "./components/ErrorBoundary";
+
+// Lazy load pages for better performance
+const Home = lazy(() => import("./components/Home"));
+const TeamPage = lazy(() => import("./pages/TeamPage"));
+const FaqPage = lazy(() => import("./pages/FaqPage"));
+const ServiceDetailPage = lazy(() => import("./pages/ServiceDetailPage"));
+const ContactPage = lazy(() => import("./pages/ContactPage"));
 
 function App() {
   return (
-    <div className="w-full">
+    <div className="w-full min-h-screen flex flex-col">
       <NavBar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/team" element={<TeamPage />} />
-        <Route path="/faq" element={<FaqPage />} />
-        <Route path="/services/:id" element={<ServiceDetailPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-      </Routes>
-      <Footer /> 
+      <main className="flex-grow">
+        <ErrorBoundary>
+          <Suspense fallback={<LoadingSpinner />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/team" element={<TeamPage />} />
+              <Route path="/faq" element={<FaqPage />} />
+              <Route path="/services/:id" element={<ServiceDetailPage />} />
+              <Route path="/contact" element={<ContactPage />} />
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
+      </main>
+      <Footer />
     </div>
   );
 }

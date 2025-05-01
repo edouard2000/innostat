@@ -29,20 +29,12 @@ const teamMembers = [
     avatar: "/vet.jpg",
   },
   {
-    id: 4,
-    name: "Mfitumukiza Peter",
-    role: "Software Engineer",
-    education: "African Leadership University, Software Engineering",
-    linkedIn: "https://www.linkedin.com/in/peter-mfitumukiza-78b8a91b4/",
-    avatar: "/peter.jpeg",
-  },
-  {
     id: 5,
     name: "Ngizwenayo Josue",
     role: "Head of Marketing",
     education: "Mount Kenya University, Bachelor of Marketing",
     linkedIn: "https://www.linkedin.com/in/josue-ngizwenayo-19528a345/",
-    avatar: "/logo512.png",
+    avatar: "/jo_mukuu.jpeg",
   },
   {
     id: 6,
@@ -53,12 +45,20 @@ const teamMembers = [
     avatar: "/noel.jpg",
   },
   {
+    id: 4,
+    name: "Mfitumukiza Peter",
+    role: "Software Engineer",
+    education: "African Leadership University, Software Engineering",
+    linkedIn: "https://www.linkedin.com/in/peter-mfitumukiza-78b8a91b4/",
+    avatar: "/peter.jpeg",
+  },
+  {
     id: 7,
     name: "Kwizera Hosiane",
     role: "Adviser",
     education: "University of Rwanda, Medicine",
     linkedIn: "https://www.linkedin.com/in/kwizera-hosiane-a159301a0/",
-    avatar: "/logo512.png",
+    avatar: "/hosiane.jpeg",
   },
   {
     id: 8,
