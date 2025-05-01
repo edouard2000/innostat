@@ -1,15 +1,12 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
-import { Code, LineChart, Target } from "lucide-react";
+import { Star, Lightbulb, Shield, Target, Award } from "lucide-react";
 
 const HeroSection = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const missionRef = useRef(null);
-
   return (
     <div className="bg-gradient-to-b from-white to-blue-50">
-      <section className="w-full h-screen flex flex-col items-center justify-center relative">
+      <section className="w-full min-h-screen flex flex-col items-center justify-center relative py-20">
         <div className="absolute inset-0 overflow-hidden">
           <motion.div 
             className="absolute w-64 h-64 rounded-full bg-blue-100 top-1/4 -left-20"
@@ -22,22 +19,22 @@ const HeroSection = () => {
             transition={{ duration: 6, repeat: Infinity, delay: 1 }}
           />
         </div>
-        <div className="z-10 px-4 md:px-0 max-w-4xl w-full">
+
+        <div className="z-10 px-4 md:px-0 max-w-6xl w-full">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="text-center"
+            className="text-center mb-12"
           >
             <h1 className="text-5xl md:text-7xl font-bold text-[#0e68b1] tracking-tight">
               Innovation Simplified
             </h1>
-            
-            <div className="mt-6 mb-8 text-xl md:text-2xl font-medium text-[#0e68b1]/80">
-              We are 
+            <div className="mt-6 text-xl md:text-2xl font-medium text-[#0e68b1]/80">
+              Transforming Data into 
               <span className="font-bold text-[#0e68b1] ml-2">
                 <Typewriter
-                  words={["creative", "strategic", "data-driven"]}
+                  words={["Insights", "Solutions", "Success"]}
                   loop
                   cursor
                   cursorStyle="|"
@@ -48,95 +45,95 @@ const HeroSection = () => {
               </span>
             </div>
           </motion.div>
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-12"
-          >
-            {[
-              { 
-                icon: <Code className="h-8 w-8 text-[#0e68b1]" />, 
-                title: "Develop", 
-                description: "Custom solutions" 
-              },
-              { 
-                icon: <LineChart className="h-8 w-8 text-[#0e68b1]" />, 
-                title: "Analyze", 
-                description: "Data-driven insights" 
-              },
-              { 
-                icon: <Target className="h-8 w-8 text-[#0e68b1]" />, 
-                title: "Deliver", 
-                description: "Targeted results" 
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(14, 104, 177, 0.1)" }}
-                className="bg-white rounded-lg p-6 flex flex-col items-center text-center shadow-md"
-              >
-                <div className="bg-blue-50 p-4 rounded-full mb-4">
-                  {item.icon}
-                </div>
-                <h3 className="text-xl font-bold text-[#0e68b1] mb-2">{item.title}</h3>
-                <p className="text-[#0e68b1]/70">{item.description}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-      <section 
-        ref={missionRef}
-        className="w-full py-8 px-4 md:px-0"
-      >
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-6">
-            <motion.h2 
-              className="text-3xl md:text-4xl font-bold text-[#0e68b1]"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
+
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden p-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="max-w-4xl mx-auto"
             >
-              Our Mission
-            </motion.h2>
-            <motion.div 
-              className="h-1 w-20 bg-[#0e68b1] mx-auto mt-4"
-              initial={{ width: 0 }}
-              whileInView={{ width: 80 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-            />
-          </div>
-          
-          <motion.div
-            initial={{ height: isExpanded ? "auto" : 0, opacity: 0 }}
-            animate={{ height: "auto", opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="bg-white rounded-xl shadow-lg overflow-hidden"
-          >
-            <div className="p-8">
-              <p className="text-lg text-[#0e68b1]/80 text-center leading-relaxed">
-                We transform complex data into actionable insights, enabling businesses to 
-                thrive in the digital era.
+              <h2 className="text-3xl font-bold text-[#0e68b1] mb-6 text-center">Who We Are</h2>
+              <p className="text-lg text-[#0e68b1]/80 leading-relaxed mb-12 text-center">
+                The InnoStat Ltd is a registered liability company established in Rwanda in accordance with Law No. 007/2021 of 05/02/2021 governing companies in Rwanda. We are dedicated to delivering high-quality services in data analysis and reporting, graphic design and branding, professional short courses, web design and development, as well as data management.
               </p>
-              
-              <div className="mt-8 pt-8 border-t border-blue-100 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="text-center">
-                  <h3 className="text-xl font-bold text-[#0e68b1] mb-2">Vision</h3>
-                  <p className="text-[#0e68b1]/70">
-                    A world where data empowers every decision
-                  </p>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="bg-blue-50 rounded-xl p-8"
+              >
+                <div className="flex items-center justify-center mb-6">
+                  <Target className="h-12 w-12 text-[#0e68b1]" />
                 </div>
-                <div className="text-center">
-                  <h3 className="text-xl font-bold text-[#0e68b1] mb-2">Values</h3>
-                  <p className="text-[#0e68b1]/70">
-                    Excellence • Innovation • Integrity
-                  </p>
+                <h3 className="text-2xl font-bold text-[#0e68b1] mb-4 text-center">Our Vision</h3>
+                <p className="text-[#0e68b1]/80 leading-relaxed text-center">
+                  To be a leader in driving innovation, transforming data into actionable insights, and creating impactful experiences that empower individuals, organizations, and communities to achieve lasting success and sustainable growth.
+                </p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+                className="bg-blue-50 rounded-xl p-8"
+              >
+                <div className="flex items-center justify-center mb-6">
+                  <Award className="h-12 w-12 text-[#0e68b1]" />
                 </div>
-              </div>
+                <h3 className="text-2xl font-bold text-[#0e68b1] mb-4 text-center">Our Mission</h3>
+                <p className="text-[#0e68b1]/80 leading-relaxed text-center">
+                  At InnoStat, we are committed to empowering individuals, businesses, and organizations by providing high-quality services in data analysis and reporting, graphic design, branding, web development, data management, and professional training.
+                </p>
+              </motion.div>
             </div>
-          </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+              className="text-center mb-8"
+            >
+              <h3 className="text-3xl font-bold text-[#0e68b1] mb-8">Our Values</h3>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <motion.div
+                  whileHover={{ y: -5 }}
+                  className="bg-white rounded-xl p-6 shadow-md"
+                >
+                  <div className="bg-blue-50 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <Star className="h-8 w-8 text-[#0e68b1]" />
+                  </div>
+                  <h4 className="text-xl font-bold text-[#0e68b1] mb-2">Excellence</h4>
+                  <p className="text-[#0e68b1]/70">Striving for the highest quality in everything we do</p>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ y: -5 }}
+                  className="bg-white rounded-xl p-6 shadow-md"
+                >
+                  <div className="bg-blue-50 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <Lightbulb className="h-8 w-8 text-[#0e68b1]" />
+                  </div>
+                  <h4 className="text-xl font-bold text-[#0e68b1] mb-2">Innovation</h4>
+                  <p className="text-[#0e68b1]/70">Continuously seeking new and better ways to serve our clients</p>
+                </motion.div>
+
+                <motion.div
+                  whileHover={{ y: -5 }}
+                  className="bg-white rounded-xl p-6 shadow-md"
+                >
+                  <div className="bg-blue-50 p-4 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                    <Shield className="h-8 w-8 text-[#0e68b1]" />
+                  </div>
+                  <h4 className="text-xl font-bold text-[#0e68b1] mb-2">Integrity</h4>
+                  <p className="text-[#0e68b1]/70">Maintaining the highest standards of honesty and ethical conduct</p>
+                </motion.div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>

@@ -45,7 +45,7 @@ const Footer = () => {
                 <Instagram size={24} />
               </a>
               <a
-                href="https://twitter.com/innostat"
+                href="https://x.com/InnoSTAT_Rw"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white/80 transition-colors"
