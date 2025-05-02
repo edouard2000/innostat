@@ -7,6 +7,7 @@ const BannerSlider = () => {
     { image: "/slider1.png", alt: "Statistical Analysis Services" },
     { image: "/slider2.png", alt: "Data Visualization Solutions" },
     { image: "/slider3.png", alt: "Professional Training Programs" },
+    { image: "/slider4.png", alt: "Professional Training Programs" },
   ];
   
   const [currentIndex, setCurrentIndex] = useState(0);
