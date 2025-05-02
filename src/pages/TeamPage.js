@@ -14,7 +14,7 @@ const teamMembers = [
   {
     id: 2,
     name: "Kwizera Edouard",
-    role: "Co-Founder & Developer",
+    role: "Co-Founder | Developer",
     education: "Bachelor of Computer Science and Philosophy, Princeton University",
     linkedIn: "https://www.linkedin.com/in/edouard-princeton-cs/",
     avatar: "/edouard.png",
@@ -53,8 +53,8 @@ const teamMembers = [
   },
   {
     id: 7,
-    name: "Kwizera Hosiane",
-    role: "Adviser",
+    name: "Dr Kwizera Hosiane",
+    role: "Adviser | Medical Doctor ",
     education: "University of Rwanda, Bachelor of Medicine and Surgery ",
     linkedIn: "https://www.linkedin.com/in/kwizera-hosiane-a159301a0/",
     avatar: "/hosiane.jpeg",
