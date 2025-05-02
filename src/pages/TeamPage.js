@@ -5,26 +5,25 @@ import { Linkedin } from "lucide-react";
 const teamMembers = [
   {
     id: 1,
-    name: "Izabayo Josias",
-    role: "Founder & CEO",
-    education: "Mount Kenya University, Masters in Applied Statistics",
-    linkedIn: "https://www.linkedin.com/in/edouard-princeton-cs/",
+    name: "Izabayo Josias,MPH",
+    role: "Founder|Researcher|Statistician|Graphic Designer",
+    education: "Master's of Public Health-Epidemiology & Disease Control",
+    linkedIn: "http://linkedin.com/in/izabayo-josias-957264205/",
     avatar: "/josias.jpg",
   },
   {
     id: 2,
     name: "Kwizera Edouard",
     role: "Co-Founder & Developer",
-    education:
-      "Princeton University, Bachelor of Computer Science and Philosophy",
+    education: "Princeton University, Bachelor of Computer Science and Philosophy",
     linkedIn: "https://www.linkedin.com/in/edouard-princeton-cs/",
     avatar: "/edouard.png",
   },
   {
     id: 3,
-    name: "Ntakirutimana Zachee",
+    name: "Ntakirutimana Zachee,MPH",
     role: "Head of Training",
-    education: "Mount Kenya University, Masters in Applied Statistics",
+    education: "Master's of Public Health-Epidemiology & Disease Control",
     linkedIn: "https://www.linkedin.com/in/ntakirutimana-zachee-5ba17a18b/",
     avatar: "/vet.jpg",
   },
