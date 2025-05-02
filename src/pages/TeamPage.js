@@ -62,8 +62,8 @@ const teamMembers = [
   {
     id: 8,
     name: "Nzamukosha Beatrice",
-    role: "Trainer",
-    education: "University of Rwanda, Medicine",
+    role: "Trainer | Assistant lecturer",
+    education: "University of Rwanda, Masters of Science in Agroforestry and Soil Management",
     linkedIn: "https://www.linkedin.com/in/beatrice-nzamukosha-17a9481b6",
     avatar: "/beatrice.jpeg",
   },
