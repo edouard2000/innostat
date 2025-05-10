@@ -86,8 +86,7 @@ const HeroSection = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-[#0e68b1] mb-4 text-center">Our Mission</h3>
                 <p className="text-[#0e68b1]/80 leading-relaxed text-center">
-                  At InnoStat, we are committed to empowering individuals, businesses, and organizations by providing high-quality services in data analysis and reporting, graphic design, branding, web development, data management, and professional training.
-                </p>
+                 Our mission is to empower individuals, organizations, and communities in Rwanda and beyond by delivering innovative, high-quality services in data analysis, graphic design, professional training, data management, web development, and research consultancy. Through evidence-based insights, hands-on capacity building, and creative solutions, we support informed decision-making, amplify impact, and contribute to inclusive, sustainable development.
               </motion.div>
             </div>
 
