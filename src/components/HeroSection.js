@@ -71,7 +71,7 @@ const HeroSection = () => {
                 </div>
                 <h3 className="text-2xl font-bold text-[#0e68b1] mb-4 text-center">Our Vision</h3>
                 <p className="text-[#0e68b1]/80 leading-relaxed text-center">
-                  To be a leader in driving innovation, transforming data into actionable insights, and creating impactful experiences that empower individuals, organizations, and communities to achieve lasting success and sustainable growth.
+                  To be a leading provider of innovative, data-driven, and design-centered solutions in Rwanda and beyond, empowering individuals, organizations, and communities through expert research, consultancy, professional training, data analysis, creative design, and digital development.
                 </p>
               </motion.div>
 
