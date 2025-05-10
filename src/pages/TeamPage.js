@@ -70,7 +70,7 @@ const teamMembers = [
    {
     id: 8,
     name: "GASAFARI MPABUKA Willy",
-    role: "Senior consultant | lecturer",
+    role: "Senior consultant | Lecturer",
     education: "Masters in Demography (Population Studies)",
     linkedIn: "https://rw.linkedin.com/in/willy-gasafari-383b2a179",
     avatar: "/beatrice.jpeg",
