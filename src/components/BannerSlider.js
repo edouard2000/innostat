@@ -4,10 +4,10 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const BannerSlider = () => {
   const slides = [
-    { image: "/slider1.png", alt: "Statistical Analysis Services" },
-    { image: "/slider2.png", alt: "Data Visualization Solutions" },
-    { image: "/slider3.png", alt: "Professional Training Programs" },
-    { image: "/slider4.png", alt: "Promotional Materials" },
+    { image: "/slider1.jpg", alt: "Statistical Analysis Services" },
+    { image: "/slider2.jpg", alt: "Data Visualization Solutions" },
+    { image: "/slider3.jpg", alt: "Professional Training Programs" },
+    { image: "/slider4.jpg", alt: "Promotional Materials" },
   ];
   
   const [currentIndex, setCurrentIndex] = useState(0);
