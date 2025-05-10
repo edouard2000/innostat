@@ -8,7 +8,7 @@ const teamMembers = [
     name: "Izabayo Josias,MPH",
     role: "Founder|Researcher|Statistician|Graphic Designer",
     education: "Master of Public Health-Epidemiology & Disease Control",
-    linkedIn: "http://linkedin.com/in/izabayo-josias-957264205",
+    linkedIn: "https://rw.linkedin.com/in/izabayo-josias-957264205",
     avatar: "/josias.jpg",
   },
   {
