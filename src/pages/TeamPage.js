@@ -8,7 +8,7 @@ const teamMembers = [
     name: "Izabayo Josias,MPH",
     role: "Founder|Researcher|Statistician|Graphic Designer",
     education: "Master of Public Health-Epidemiology & Disease Control",
-    linkedIn: "http://linkedin.com/in/izabayo-josias-957264205/",
+    linkedIn: "http://linkedin.com/in/izabayo-josias-957264205",
     avatar: "/josias.jpg",
   },
   {
@@ -16,7 +16,7 @@ const teamMembers = [
     name: "Kwizera Edouard",
     role: "Co-Founder | Developer",
     education: "Bachelor of Computer Science and Philosophy, Princeton University",
-    linkedIn: "https://www.linkedin.com/in/edouard-princeton-cs/",
+    linkedIn: "https://www.linkedin.com/in/edouard-princeton-cs",
     avatar: "/edouard.png",
   },
   {
@@ -24,7 +24,7 @@ const teamMembers = [
     name: "Ntakirutimana Zachee,MPH",
     role: "Head of Training | Tutorial Assistant",
     education: "Master of Public Health-Epidemiology & Disease Control",
-    linkedIn: "https://www.linkedin.com/in/ntakirutimana-zachee-5ba17a18b/",
+    linkedIn: "https://www.linkedin.com/in/ntakirutimana-zachee-5ba17a18b",
     avatar: "/vet.jpg",
   },
   {
@@ -32,7 +32,7 @@ const teamMembers = [
     name: "Ngizwenayo Josue",
     role: "Head of Marketing",
     education: "Bachelor of Marketing, Christian University of Rwanda",
-    linkedIn: "https://www.linkedin.com/in/josue-ngizwenayo-19528a345/",
+    linkedIn: "https://www.linkedin.com/in/josue-ngizwenayo-19528a345",
     avatar: "/jo_mukuu.jpeg",
   },
   {
@@ -40,7 +40,7 @@ const teamMembers = [
     name: "Hakizimana Noel",
     role: "Communications Officer",
     education: "Bachelor of Mechanical Engineering, University of Rwanda",
-    linkedIn: "https://www.linkedin.com/in/hakizimana-no%C3%ABl-b9881a319/",
+    linkedIn: "https://www.linkedin.com/in/hakizimana-no%C3%ABl-b9881a319",
     avatar: "/noel.jpg",
   },
   {
@@ -48,15 +48,15 @@ const teamMembers = [
     name: "Mfitumukiza Peter",
     role: "Software Engineer",
     education: "Software Engineering, African Leadership University",
-    linkedIn: "https://www.linkedin.com/in/peter-mfitumukiza-78b8a91b4/",
+    linkedIn: "https://www.linkedin.com/in/peter-mfitumukiza-78b8a91b4",
     avatar: "/peter.jpeg",
   },
   {
     id: 7,
     name: "Dr Kwizera Hosiane",
     role: "Adviser | Medical Doctor ",
-    education: "University of Rwanda, Bachelor of Medicine and Surgery ",
-    linkedIn: "https://www.linkedin.com/in/kwizera-hosiane-a159301a0/",
+    education: "Bachelor of Medicine and Surgery, University of Rwanda ",
+    linkedIn: "https://www.linkedin.com/in/kwizera-hosiane-a159301a0",
     avatar: "/hosiane.jpeg",
   },
   {
