@@ -63,11 +63,12 @@ const NavBar = () => {
       href: "/services",
       text: "Services",
       submenu: [
-        { href: "/services/1", text: "Data Analysis" },
+        { href: "/services/1", text: "Data Analysis & Reporting" },
         { href: "/services/2", text: "Graphic Design and Branding" },
         { href: "/services/3", text: "Short Courses and Professional Training" },
         { href: "/services/4", text: "Data Management Services" },
         { href: "/services/5", text: "Web Design and Development" },
+        { href: "/services/6", text: "Research and Consultancy" },
       ],
     },
     { href: "/team", text: "Team" },
