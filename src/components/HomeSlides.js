@@ -7,6 +7,7 @@ const services = [
   { title: "Short Courses", description: "Learn. Grow. Succeed." },
   { title: "Data Management", description: "Secure and structured data solutions." },
   { title: "Web Development", description: "Modern websites for a digital world." },
+  { title: "Research & Consultancy", description: "Research-driven insights and strategic solutions" },
 ];
 
 const HomeSlides = () => {
