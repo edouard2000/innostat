@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const BannerSlider = () => {
   const slides = [
-    { image: "/slider1.png", alt: "Statistical Analysis Services" },
+    { image: "/slider1.PNG", alt: "Statistical Analysis Services" },
     { image: "/slide2.JPG", alt: "Data Visualization Solutions" },
     { image: "/slide3.JPG", alt: "Professional Training Programs" },
     { image: "/slide4.JPG", alt: "Promotional Materials" },
