@@ -55,7 +55,7 @@ const HeroSection = () => {
             >
               <h2 className="text-3xl font-bold text-[#0e68b1] mb-6 text-center">Who We Are</h2>
               <p className="text-lg text-[#0e68b1]/80 leading-relaxed mb-12 text-center">
-                The InnoStat Ltd is a registered liability company established in Rwanda in accordance with Law No. 007/2021 of 05/02/2021 governing companies in Rwanda. We are dedicated to delivering high-quality services in data analysis and reporting, graphic design and branding, professional short courses, web design and development, as well as data management.
+                The InnoStat Ltd is a registered liability company established in Rwanda in accordance with Law No. 007/2021 of 05/02/2021 governing companies in Rwanda. We are dedicated to delivering high-quality services in data analysis and reporting, graphic design and branding, professional short courses and training, web design and development, data management, as well as research and consultancy.
               </p>
             </motion.div>
 
