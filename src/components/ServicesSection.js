@@ -13,7 +13,7 @@ const services = [
     id: 2,
     title: "Graphic Design and Branding",
     description:
-      "We specialize in producing high-quality, customized materials including notebooks, flyers, banners, badges, pull-up stands, posters...",
+      "We specialize in producing high-quality, customized materials including notebooks,infographics, flyers, banners, badges, pull-up stands, posters...",
     image: "/branding.png",
   },
   {
@@ -36,6 +36,13 @@ const services = [
     description:
       "Create a powerful online presence with our custom web design and development services.",
     image: "/webdesign.JPG",
+  },
+  {
+    id: 6,
+    title: "Research and Consultancy",
+    description:
+      "Deliver impact with expert research and consultancy services for NGOs, academia, government, and businesses.",
+    image: "/research.JPG",
   },
 ];
 
