@@ -8,7 +8,7 @@ const teamMembers = [
     name: "Izabayo Josias,MPH",
     role: "Founder|Researcher|Statistician|Graphic Designer",
     education: "Master of Public Health-Epidemiology & Disease Control",
-    linkedIn: "https://rw.linkedin.com/in/izabayo-josias-957264205",
+    linkedIn: "https://www.linkedin.com/in/izabayo-josias-957264205",
     avatar: "/josias.jpg",
   },
   {
@@ -72,7 +72,7 @@ const teamMembers = [
     name: "GASAFARI MPABUKA Willy",
     role: "Senior Consultant | Lecturer",
     education: "Masters in Demography (Population Studies)",
-    linkedIn: "https://rw.linkedin.com/in/willy-gasafari-383b2a179",
+    linkedIn: "https://www.linkedin.com/in/willy-gasafari-383b2a179",
     avatar: "/willy.jpg",
   },
 ];
