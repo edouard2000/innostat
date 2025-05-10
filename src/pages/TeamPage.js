@@ -22,7 +22,7 @@ const teamMembers = [
   {
     id: 3,
     name: "Ntakirutimana Zachee,MPH",
-    role: "Head of Training",
+    role: "Head of Training | Tutorial Assistant",
     education: "Master of Public Health-Epidemiology & Disease Control",
     linkedIn: "https://www.linkedin.com/in/ntakirutimana-zachee-5ba17a18b/",
     avatar: "/vet.jpg",
