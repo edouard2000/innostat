@@ -67,6 +67,14 @@ const teamMembers = [
     linkedIn: "https://www.linkedin.com/in/beatrice-nzamukosha-17a9481b6",
     avatar: "/beatrice.jpeg",
   },
+   {
+    id: 8,
+    name: "GASAFARI MPABUKA Willy",
+    role: "Senior consultant | lecturer",
+    education: "Masters in Demography (Population Studies)",
+    linkedIn: "https://rw.linkedin.com/in/willy-gasafari-383b2a179",
+    avatar: "/beatrice.jpeg",
+  },
 ];
 
 const TeamPage = () => {
