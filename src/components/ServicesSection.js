@@ -7,42 +7,42 @@ const services = [
     title: "Data Analysis and Reporting",
     description:
       "Unlock the full potential of your data with our expert data analysis services.",
-    image: "/data_analysis&report.png",
+    image: "/data_analysis&report.jpg",
   },
   {
     id: 2,
     title: "Graphic Design and Branding",
     description:
       "We specialize in producing high-quality, customized materials including notebooks,infographics, flyers, banners, badges, pull-up stands, posters...",
-    image: "/branding.png",
+    image: "/branding.jpg",
   },
   {
     id: 3,
     title: "Short Courses and Professional Training",
     description:
       "Boost your career with our expert-led, certified training programs designed for today’s competitive landscape.",
-    image: "/shortcourses.JPG",
+    image: "/shortcourses.jpg",
   },
   {
     id: 4,
     title: "Data Management Services",
     description:
       "Streamline your data processes with our reliable and efficient data management solutions.",
-    image: "/datamanagement.JPG",
+    image: "/datamanagement.jpg",
   },
   {
     id: 5,
     title: "Web Design and Development",
     description:
       "Create a powerful online presence with our custom web design and development services.",
-    image: "/webdesign.JPG",
+    image: "/webdesign.jpg",
   },
   {
     id: 6,
     title: "Research and Consultancy",
     description:
       "Deliver impact with expert research and consultancy services for NGOs, academia, government, and businesses.",
-    image: "/research.JPG",
+    image: "/research.jpg",
   },
 ];
 
