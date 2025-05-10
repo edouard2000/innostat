@@ -148,6 +148,37 @@
         "text": "Start Building Your Website Today",
         "link": "/contact"
       }
+    },
+     {
+      "id": 6,
+      "title": "Research and Consultancy",
+      "description": "Drive impact through evidence-based research and expert consultancy services. We support NGOs, academic institutions, government agencies, and businesses in designing, implementing, and evaluating research projects.",
+      "detailed_description":"Drive impact through evidence-based research and expert consultancy services. We support NGOs, academic institutions, government agencies, and businesses in designing, implementing, and evaluating research projects. From proposal writing to inception report, data collection, analysis, and report writing, we deliver solutions that address your unique challenges and goals",
+      "key_benefits": [
+        "End-to-end research support",
+        "Expert guidance in proposal writing and project design",
+        "Accurate data collection and analysis",
+        "Context-specific and actionable recommendations",
+        "Capacity building for teams and institutions"
+      ],
+      "use_cases": [
+        "NGOs evaluating program outcomes",
+        "Government institutions needing policy-relevant research",
+        "Academic institutions seeking collaborative studies",
+        "Private sector companies conducting market or impact research",
+        "Development agencies requiring monitoring & evaluation support"
+      ],
+      "process": [
+        "Understanding client needs and goals",
+        "Developing research proposals and methodologies",
+        "Data collection using qualitative and quantitative methods",
+        "Data analysis and interpretation",
+        "Reporting, presentation, infographics and dissemination of findings"
+      ],
+      "call_to_action": {
+        "text": "Partner with Us for Your Research Needs",
+        "link": "/contact"
+      }
     }
   ]
   
