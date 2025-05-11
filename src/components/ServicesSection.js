@@ -11,7 +11,7 @@ const services = [
   },
   {
     id: 2,
-    title: "Graphic Design and Branding",
+    href: title: "Graphic Design and Branding",
     description:
       "We specialize in producing high-quality, customized materials including notebooks,infographics, flyers, banners, badges, pull-up stands, posters...",
     image: "/branding.jpg",
