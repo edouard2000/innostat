@@ -6,7 +6,7 @@ const teamMembers = [
   {
     id: 1,
     name: "Izabayo Josias,MPH",
-    role: "Founder|Researcher|Statistician|Graphic Designer",
+    role: "Founder | Researcher | Statistician | Graphic Designer",
     education: "Master of Public Health-Epidemiology & Disease Control",
     linkedIn: "https://www.linkedin.com/in/izabayo-josias-957264205",
     avatar: "/josias.jpg",
@@ -70,7 +70,7 @@ const teamMembers = [
    {
     id: 8,
     name: "Gasafari Mpabuka Willy",
-    role: "Senior Consultant | Lecturer",
+    role: "Senior Consultant | Statistician | Lecturer",
     education: "Masters in Demography (Population Studies)",
     linkedIn: "https://www.linkedin.com/in/willy-gasafari-383b2a179",
     avatar: "/willy.jpg",
