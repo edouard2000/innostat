@@ -9,6 +9,13 @@ const services = [
       "Unlock the full potential of your data with our expert data analysis services.",
     image: "/data_analysis&report.jpg",
   },
+   {
+  id: 1,
+      title: "Data Analysis and Reporting",
+      description:
+        "Unlock the full potential of your data with our expert data analysis services.",
+      image: "/data_analysis&report.jpg",
+  },
   {
     id: 2,
     href: title: "Graphic Design and Branding",
