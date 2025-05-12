@@ -57,7 +57,7 @@ const ContactPage = () => {
             <h3 className="text-2xl font-bold mb-4 text-white">Social Media</h3>
             <div className="flex items-center space-x-6">
               <a
-                href="https://www.instagram.com/innostat"
+                href="https://www.instagram.com/innostat_rw/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white/80 transition-colors"
@@ -65,7 +65,7 @@ const ContactPage = () => {
                 <Instagram className="w-8 h-8 text-white" />
               </a>
               <a
-                href="https://twitter.com/innostat"
+                href="https://x.com/InnoSTAT_Rw"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-white/80 transition-colors"
