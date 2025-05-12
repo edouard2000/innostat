@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -11,7 +12,7 @@ const services = [
   },
   {
     id: 2,
-    href: title: "Graphic Design and Branding",
+    title: "Graphic Design and Branding",
     description:
       "We specialize in producing high-quality, customized materials including notebooks,infographics, flyers, banners, badges, pull-up stands, posters...",
     image: "/branding.jpg",
@@ -20,7 +21,7 @@ const services = [
     id: 3,
     title: "Short Courses and Professional Training",
     description:
-      "Boost your career with our expert-led, certified training programs designed for today’s competitive landscape.",
+      "Boost your career with our expert-led, certified training programs designed for today's competitive landscape.",
     image: "/shortcourses.jpg",
   },
   {
@@ -48,10 +49,10 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="w-full py-16 px-8 md:px-16 bg-white">
+    <section className="w-full py-12 px-4 md:px-8 bg-white">
       <div className="max-w-7xl mx-auto text-center">
         <motion.h2
-          className="text-4xl md:text-6xl font-extrabold text-[#0e68b1] mb-4"
+          className="text-2xl md:text-3xl font-bold text-[#0e68b1] mb-3"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
@@ -59,7 +60,7 @@ const ServicesSection = () => {
           Our Services
         </motion.h2>
         <motion.p
-          className="text-lg md:text-xl text-[#0e68b1]/80 mb-10"
+          className="text-sm md:text-base text-[#0e68b1]/80 mb-8 max-w-2xl mx-auto"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1.2 }}
@@ -67,29 +68,34 @@ const ServicesSection = () => {
           Discover our range of professional services designed to boost your business.
         </motion.p>
 
-        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
-            <motion.div
+            <Link
+              to={`/services/${service.id}`}
               key={service.id}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg border border-[#0e68b1]/20 transform transition-transform duration-300 hover:-translate-y-2"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: index * 0.15 }}
+              className="block"
             >
-              <img
-                src={service.image}
-                alt={service.title}
-                className="w-full h-48 object-contain"
-              />
-              <div className="p-6">
-                <h3 className="text-2xl font-bold text-[#0e68b1] mb-2">
-                  {service.title}
-                </h3>
-                <p className="text-[#0e68b1]/80">
-                  {service.description}
-                </p>
-              </div>
-            </motion.div>
+              <motion.div
+                className="bg-white rounded-xl overflow-hidden shadow-md border border-[#0e68b1]/10 transform transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: index * 0.15 }}
+              >
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-40 object-contain bg-gray-50"
+                />
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold text-[#0e68b1] mb-2 line-clamp-1">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-[#0e68b1]/80 line-clamp-2">
+                    {service.description}
+                  </p>
+                </div>
+              </motion.div>
+            </Link>
           ))}
         </div>
       </div>
