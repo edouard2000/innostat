@@ -4,44 +4,40 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 const NavBar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+
+  const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeItem, setActiveItem] = useState("");
-  const [focusedIndex, setFocusedIndex] = useState(-1);
-  const menuRef = useRef(null);
-  const buttonRef = useRef(null);
-  const location = useLocation();
+  const [mobileParent, setMobileParent] = useState("");
+  const [focused, setFocused] = useState(-1);
+
+  const menuRef   = useRef(null);
+  const burgerRef = useRef(null);
+  const location  = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
   useEffect(() => {
-    const handleClickOutside = (e) => {
+    const handleOutside = (e) => {
       if (
-        isOpen && 
-        buttonRef.current && 
-        !buttonRef.current.contains(e.target) && 
-        menuRef.current && 
-        !menuRef.current.contains(e.target)
+        mobileOpen &&
+        burgerRef.current && !burgerRef.current.contains(e.target) &&
+        menuRef.current   && !menuRef.current.contains(e.target)
       ) {
-        setIsOpen(false);
+        setMobileOpen(false);
       }
     };
-    
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("touchstart", handleClickOutside);
-    
+    document.addEventListener("mousedown", handleOutside);
+    document.addEventListener("touchstart", handleOutside);
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("touchstart", handleClickOutside);
+      document.removeEventListener("mousedown", handleOutside);
+      document.removeEventListener("touchstart", handleOutside);
     };
-  }, [isOpen]);
-  
-  useEffect(() => {
-    setIsOpen(false);
-  }, [location]);
+  }, [mobileOpen]);
+
+  useEffect(() => setMobileOpen(false), [location]);
 
   const links = [
     { href: "/", text: "Home" },
@@ -50,64 +46,81 @@ const NavBar = () => {
       text: "Services",
       submenu: [
         { href: "/services/1", text: "Data Analysis & Reporting" },
-        { href: "/services/2", text: "Graphic Design and Branding" },
-        { href: "/services/3", text: "Short Courses and Professional Training" },
+        { href: "/services/2", text: "Graphic Design & Branding" },
+        { href: "/services/3", text: "Short Courses & Training" },
         { href: "/services/4", text: "Data Management Services" },
-        { href: "/services/5", text: "Web Design and Development" },
-        { href: "/services/6", text: "Research and Consultancy" },
+        { href: "/services/5", text: "Web Design & Development" },
+        { href: "/services/6", text: "Research & Consultancy" },
       ],
     },
     { href: "/team", text: "Team" },
     { href: "/faq", text: "FAQ" },
   ];
 
-  const handleKeyDown = (e, index) => {
+  const onKey = (e, idx) => {
     switch (e.key) {
       case "ArrowDown":
         e.preventDefault();
-        setFocusedIndex((prev) => (prev + 1) % links.length);
+        setFocused((p) => (p + 1) % links.length);
         break;
       case "ArrowUp":
         e.preventDefault();
-        setFocusedIndex((prev) => (prev - 1 + links.length) % links.length);
-        break;
-      case "Enter":
-      case " ":
-        e.preventDefault();
-        if (links[index].submenu) {
-          setActiveItem((current) =>
-            current === links[index].text ? "" : links[index].text
-          );
-        }
+        setFocused((p) => (p - 1 + links.length) % links.length);
         break;
       case "Escape":
-        setIsOpen(false);
+        setMobileOpen(false);
         break;
       default:
         break;
     }
   };
-
   const NavLink = ({ link, index }) => {
-    const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
-
+    const [open, setOpen] = useState(false);
+    const desktop = window.matchMedia("(min-width: 768px)").matches;
+    const navLinkRef = useRef(null);
+    const submenuRef = useRef(null);
+    const closeTimerRef = useRef(null);
+    const handleMouseEnter = () => {
+      if (closeTimerRef.current) {
+        clearTimeout(closeTimerRef.current);
+        closeTimerRef.current = null;
+      }
+      setOpen(true);
+    };
+    
+    const handleMouseLeave = () => {
+      closeTimerRef.current = setTimeout(() => {
+        setOpen(false);
+      }, 300); 
+    };
+    useEffect(() => {
+      return () => {
+        if (closeTimerRef.current) {
+          clearTimeout(closeTimerRef.current);
+        }
+      };
+    }, []);
+    
     return (
       <div
-        className="relative group"
-        onMouseEnter={() => setIsSubMenuOpen(true)}
-        onMouseLeave={() => setIsSubMenuOpen(false)}
+        ref={navLinkRef}
+        className="relative static md:relative"
+        onMouseEnter={desktop && link.submenu ? handleMouseEnter : undefined}
+        onMouseLeave={desktop && link.submenu ? handleMouseLeave : undefined}
       >
         {link.submenu ? (
           <button
             className={`flex items-center text-[#0e68b1] hover:bg-[#0e68b1]/10 px-4 py-2 mx-1 rounded-md text-sm ${
-              isSubMenuOpen ? "bg-[#0e68b1]/20" : ""
-            } ${focusedIndex === index ? "ring-2 ring-[#0e68b1] ring-offset-2" : ""}`}
+              open ? "bg-[#0e68b1]/20" : ""
+            } ${
+              focused === index ? "ring-2 ring-[#0e68b1] ring-offset-2" : ""
+            }`}
             onClick={(e) => {
               e.stopPropagation();
-              setIsSubMenuOpen((open) => !open);
+              if (!desktop) setOpen((o) => !o);
             }}
-            onKeyDown={(e) => handleKeyDown(e, index)}
-            aria-expanded={isSubMenuOpen}
+            onKeyDown={(e) => onKey(e, index)}
+            aria-expanded={open}
             aria-haspopup="true"
             aria-controls={`submenu-${index}`}
           >
@@ -118,33 +131,33 @@ const NavBar = () => {
           <Link
             to={link.href}
             className={`text-[#0e68b1] hover:bg-[#0e68b1]/10 px-4 py-2 mx-1 rounded-md text-sm ${
-              focusedIndex === index ? "ring-2 ring-[#0e68b1] ring-offset-2" : ""
+              focused === index ? "ring-2 ring-[#0e68b1] ring-offset-2" : ""
             }`}
-            onKeyDown={(e) => handleKeyDown(e, index)}
-            onClick={(e) => e.stopPropagation()}
+            onKeyDown={(e) => onKey(e, index)}
           >
             {link.text}
           </Link>
         )}
-
-        {link.submenu && isSubMenuOpen && (
+        {link.submenu && open && (
           <div
+            ref={submenuRef}
             id={`submenu-${index}`}
             role="menu"
             aria-label={`${link.text} submenu`}
-            className="hidden md:block absolute top-full left-0 right-0 bg-white py-8 z-50 shadow-lg"
+            className="fixed left-0 right-0 top-20 hidden md:block bg-white py-8 shadow-lg z-50"
+            onMouseEnter={desktop ? handleMouseEnter : undefined}
+            onMouseLeave={desktop ? handleMouseLeave : undefined}
           >
             <div className="max-w-7xl mx-auto px-4">
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
-                {link.submenu.map((subItem) => (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-12 gap-y-4 text-left">
+                {link.submenu.map((sub) => (
                   <Link
-                    key={subItem.href}
-                    to={subItem.href}
-                    className="text-[#0e68b1] hover:underline text-sm p-2 rounded-md hover:bg-[#0e68b1]/5"
+                    key={sub.href}
+                    to={sub.href}
+                    className="block text-[#0e68b1] hover:underline text-sm p-2 rounded-md hover:bg-[#0e68b1]/5"
                     role="menuitem"
-                    onClick={(e) => e.stopPropagation()}
                   >
-                    {subItem.text}
+                    {sub.text}
                   </Link>
                 ))}
               </div>
@@ -154,7 +167,6 @@ const NavBar = () => {
       </div>
     );
   };
-
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -170,46 +182,34 @@ const NavBar = () => {
             className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2 rounded-md"
             aria-label="Home"
           >
-            <img
-              src="/logo.PNG"
-              alt="InnoStat Logo"
-              className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
-            />
+            <img src="/logo.PNG" alt="InnoStat Logo" className="h-10 w-auto" />
           </Link>
-
-          {/* desktop menu */}
           <div className="hidden md:flex items-center justify-center flex-1">
-            {links.map((link, idx) => (
-              <NavLink key={link.text} link={link} index={idx} />
+            {links.map((l, i) => (
+              <NavLink key={l.text} link={l} index={i} />
             ))}
             <Link
               to="/contact"
-              className="ml-6 bg-[#0e68b1] text-white hover:bg-[#0e68b1]/90 px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
-              aria-label="Contact Us"
-              onClick={(e) => e.stopPropagation()}
+              className="ml-6 bg-[#0e68b1] text-white hover:bg-[#0e68b1]/90 px-6 py-2 rounded-full text-sm font-medium shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
             >
-              Contact Us
+              Contact&nbsp;Us
             </Link>
           </div>
-
-          {/* mobile hamburger */}
           <button
-            ref={buttonRef}
+            ref={burgerRef}
             onClick={(e) => {
               e.stopPropagation();
-              setIsOpen((open) => !open);
+              setMobileOpen((o) => !o);
             }}
             className="md:hidden text-[#0e68b1] p-2 hover:bg-[#0e68b1]/10 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
-            aria-label={isOpen ? "Close menu" : "Open menu"}
-            aria-expanded={isOpen}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileOpen}
             aria-controls="mobile-menu"
           >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
-
-        {/* mobile menu */}
-        {isOpen && (
+        {mobileOpen && (
           <div
             ref={menuRef}
             id="mobile-menu"
@@ -217,38 +217,34 @@ const NavBar = () => {
             role="menu"
             aria-label="Mobile menu"
           >
-            {links.map((link, idx) => (
-              <div key={link.text}>
-                {link.submenu ? (
+            {links.map((l, i) => (
+              <div key={l.text}>
+                {l.submenu ? (
                   <>
                     <button
                       onClick={(e) => {
                         e.stopPropagation();
-                        setActiveItem((cur) => (cur === link.text ? "" : link.text));
+                        setMobileParent((cur) => (cur === l.text ? "" : l.text));
                       }}
                       className="block w-full text-left text-[#0e68b1] hover:bg-[#0e68b1]/10 px-3 py-2 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
-                      aria-expanded={activeItem === link.text}
-                      aria-controls={`mobile-submenu-${idx}`}
+                      aria-expanded={mobileParent === l.text}
+                      aria-controls={`mobile-sub-${i}`}
                     >
-                      {link.text}
+                      {l.text}
                     </button>
-                    {activeItem === link.text && (
+                    {mobileParent === l.text && (
                       <div
-                        id={`mobile-submenu-${idx}`}
+                        id={`mobile-sub-${i}`}
                         className="pl-4 bg-[#0e68b1]/5 rounded-md mt-1"
                         role="menu"
                       >
-                        {link.submenu.map((sub) => (
+                        {l.submenu.map((sub) => (
                           <Link
                             key={sub.href}
                             to={sub.href}
-                            className="block text-[#0e68b1]/90 hover:bg-[#0e68b1]/10 px-3 py-2 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
+                            className="block text-[#0e68b1]/90 hover:bg-[#0e68b1]/10 px-3 py-2 text-sm rounded-md"
                             role="menuitem"
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setIsOpen(false);
-                              setActiveItem("");
-                            }}
+                            onClick={() => setMobileOpen(false)}
                           >
                             {sub.text}
                           </Link>
@@ -258,27 +254,21 @@ const NavBar = () => {
                   </>
                 ) : (
                   <Link
-                    to={link.href}
-                    className="block w-full text-left text-[#0e68b1] hover:bg-[#0e68b1]/10 px-3 py-2 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      setIsOpen(false);
-                    }}
+                    to={l.href}
+                    className="block w-full text-left text-[#0e68b1] hover:bg-[#0e68b1]/10 px-3 py-2 text-sm rounded-md"
+                    onClick={() => setMobileOpen(false)}
                   >
-                    {link.text}
+                    {l.text}
                   </Link>
                 )}
               </div>
             ))}
             <Link
               to="/contact"
-              className="block text-[#0e68b1] bg-[#0e68b1]/20 hover:bg-[#0e68b1]/30 px-3 py-2 text-sm mt-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
-              onClick={(e) => {
-                e.stopPropagation();
-                setIsOpen(false);
-              }}
+              className="block text-[#0e68b1] bg-[#0e68b1]/20 hover:bg-[#0e68b1]/30 px-3 py-2 text-sm mt-2 rounded-md"
+              onClick={() => setMobileOpen(false)}
             >
-              Contact Us
+              Contact&nbsp;Us
             </Link>
           </div>
         )}
