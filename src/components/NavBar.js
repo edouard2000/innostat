@@ -1,3 +1,4 @@
+// src/components/NavBar.jsx
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -16,46 +17,21 @@ const NavBar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // close mobile menu on outside click
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+    const handleClickOutside = (e) => {
+      if (menuRef.current && !menuRef.current.contains(e.target)) {
         setIsOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // close mobile menu on route change
   useEffect(() => {
-    // Close mobile menu when route changes
     setIsOpen(false);
   }, [location]);
-
-  const handleKeyDown = (e, index) => {
-    switch (e.key) {
-      case "ArrowDown":
-        e.preventDefault();
-        setFocusedIndex((prev) => (prev + 1) % links.length);
-        break;
-      case "ArrowUp":
-        e.preventDefault();
-        setFocusedIndex((prev) => (prev - 1 + links.length) % links.length);
-        break;
-      case "Enter":
-      case " ":
-        e.preventDefault();
-        if (links[index].submenu) {
-          setActiveItem(activeItem === links[index].text ? "" : links[index].text);
-        }
-        break;
-      case "Escape":
-        setIsOpen(false);
-        break;
-      default:
-        break;
-    }
-  };
 
   const links = [
     { href: "/", text: "Home" },
@@ -75,6 +51,33 @@ const NavBar = () => {
     { href: "/faq", text: "FAQ" },
   ];
 
+  const handleKeyDown = (e, index) => {
+    switch (e.key) {
+      case "ArrowDown":
+        e.preventDefault();
+        setFocusedIndex((prev) => (prev + 1) % links.length);
+        break;
+      case "ArrowUp":
+        e.preventDefault();
+        setFocusedIndex((prev) => (prev - 1 + links.length) % links.length);
+        break;
+      case "Enter":
+      case " ":
+        e.preventDefault();
+        if (links[index].submenu) {
+          setActiveItem((current) =>
+            current === links[index].text ? "" : links[index].text
+          );
+        }
+        break;
+      case "Escape":
+        setIsOpen(false);
+        break;
+      default:
+        break;
+    }
+  };
+
   const NavLink = ({ link, index }) => {
     const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
 
@@ -89,7 +92,7 @@ const NavBar = () => {
             className={`flex items-center text-[#0e68b1] hover:bg-[#0e68b1]/10 px-4 py-2 mx-1 rounded-md text-sm ${
               isSubMenuOpen ? "bg-[#0e68b1]/20" : ""
             } ${focusedIndex === index ? "ring-2 ring-[#0e68b1] ring-offset-2" : ""}`}
-            onClick={() => setIsSubMenuOpen(!isSubMenuOpen)}
+            onClick={() => setIsSubMenuOpen((open) => !open)}
             onKeyDown={(e) => handleKeyDown(e, index)}
             aria-expanded={isSubMenuOpen}
             aria-haspopup="true"
@@ -113,9 +116,9 @@ const NavBar = () => {
         {link.submenu && isSubMenuOpen && (
           <div
             id={`submenu-${index}`}
-            className="fixed left-0 right-0 bg-white py-8 z-50 shadow-lg"
             role="menu"
             aria-label={`${link.text} submenu`}
+            className="hidden md:block absolute top-full left-0 right-0 bg-white py-8 z-50 shadow-lg"
           >
             <div className="max-w-7xl mx-auto px-4">
               <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
@@ -124,8 +127,8 @@ const NavBar = () => {
                     key={subItem.href}
                     to={subItem.href}
                     className="text-[#0e68b1] hover:underline text-sm p-2 rounded-md hover:bg-[#0e68b1]/5"
-                    onClick={(e) => e.stopPropagation()}
                     role="menuitem"
+                    onClick={(e) => e.stopPropagation()}
                   >
                     {subItem.text}
                   </Link>
@@ -148,23 +151,22 @@ const NavBar = () => {
     >
       <div className="max-w-7xl mx-auto px-4">
         <div className="flex items-center justify-between h-20">
-          <div className="flex items-center">
-            <Link
-              to="/"
-              className="flex items-center space-x-2 group focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2 rounded-md"
-              aria-label="Home"
-            >
-              <img
-                src="/logo.PNG"
-                alt="InnoStat Logo"
-                className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
-              />
-            </Link>
-          </div>
+          <Link
+            to="/"
+            className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2 rounded-md"
+            aria-label="Home"
+          >
+            <img
+              src="/logo.PNG"
+              alt="InnoStat Logo"
+              className="h-10 w-auto transition-transform duration-300 group-hover:scale-105"
+            />
+          </Link>
 
+          {/* desktop menu */}
           <div className="hidden md:flex items-center justify-center flex-1">
-            {links.map((link, index) => (
-              <NavLink key={link.text} link={link} index={index} />
+            {links.map((link, idx) => (
+              <NavLink key={link.text} link={link} index={idx} />
             ))}
             <Link
               to="/contact"
@@ -175,9 +177,10 @@ const NavBar = () => {
             </Link>
           </div>
 
+          {/* mobile hamburger */}
           <button
             ref={menuRef}
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen((open) => !open)}
             className="md:hidden text-[#0e68b1] p-2 hover:bg-[#0e68b1]/10 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
@@ -187,6 +190,7 @@ const NavBar = () => {
           </button>
         </div>
 
+        {/* mobile menu */}
         {isOpen && (
           <div
             id="mobile-menu"
@@ -194,19 +198,43 @@ const NavBar = () => {
             role="menu"
             aria-label="Mobile menu"
           >
-            {links.map((link, index) => (
+            {links.map((link, idx) => (
               <div key={link.text}>
                 {link.submenu ? (
-                  <button
-                    onClick={() =>
-                      setActiveItem(activeItem === link.text ? "" : link.text)
-                    }
-                    className="block w-full text-left text-[#0e68b1] hover:bg-[#0e68b1]/10 px-3 py-2 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
-                    aria-expanded={activeItem === link.text}
-                    aria-controls={`mobile-submenu-${index}`}
-                  >
-                    {link.text}
-                  </button>
+                  <>
+                    <button
+                      onClick={() =>
+                        setActiveItem((cur) => (cur === link.text ? "" : link.text))
+                      }
+                      className="block w-full text-left text-[#0e68b1] hover:bg-[#0e68b1]/10 px-3 py-2 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
+                      aria-expanded={activeItem === link.text}
+                      aria-controls={`mobile-submenu-${idx}`}
+                    >
+                      {link.text}
+                    </button>
+                    {activeItem === link.text && (
+                      <div
+                        id={`mobile-submenu-${idx}`}
+                        className="pl-4 bg-[#0e68b1]/5 rounded-md mt-1"
+                        role="menu"
+                      >
+                        {link.submenu.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            to={sub.href}
+                            className="block text-[#0e68b1]/90 hover:bg-[#0e68b1]/10 px-3 py-2 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
+                            role="menuitem"
+                            onClick={() => {
+                              setIsOpen(false);
+                              setActiveItem("");
+                            }}
+                          >
+                            {sub.text}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </>
                 ) : (
                   <Link
                     to={link.href}
@@ -215,29 +243,6 @@ const NavBar = () => {
                   >
                     {link.text}
                   </Link>
-                )}
-
-                {link.submenu && activeItem === link.text && (
-                  <div
-                    id={`mobile-submenu-${index}`}
-                    className="pl-4 bg-[#0e68b1]/5 rounded-md mt-1"
-                    role="menu"
-                  >
-                    {link.submenu.map((subItem) => (
-                      <Link
-                        key={subItem.href}
-                        to={subItem.href}
-                        className="block text-[#0e68b1]/90 hover:bg-[#0e68b1]/10 px-3 py-2 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
-                        onClick={() => {
-                          setIsOpen(false);
-                          setActiveItem("");
-                        }}
-                        role="menuitem"
-                      >
-                        {subItem.text}
-                      </Link>
-                    ))}
-                  </div>
                 )}
               </div>
             ))}

@@ -1,4 +1,4 @@
-// App.js
+// src/App.js
 import React, { Suspense, lazy } from "react";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
@@ -6,7 +6,6 @@ import Footer from "./components/Footer";
 import LoadingSpinner from "./components/LoadingSpinner";
 import ErrorBoundary from "./components/ErrorBoundary";
 
-// Lazy load pages for better performance
 const Home = lazy(() => import("./components/Home"));
 const TeamPage = lazy(() => import("./pages/TeamPage"));
 const FaqPage = lazy(() => import("./pages/FaqPage"));
