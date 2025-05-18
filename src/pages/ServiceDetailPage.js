@@ -15,7 +15,7 @@ const ServiceDetailPage = () => {
       </div>
     );
   }
-
+  
   return (
     <section className="w-full min-h-screen bg-white text-[#0e68b1] py-16 px-8 md:px-16 mt-10">
       <motion.div

@@ -9,6 +9,7 @@ const NavBar = () => {
   const [activeItem, setActiveItem] = useState("");
   const [focusedIndex, setFocusedIndex] = useState(-1);
   const menuRef = useRef(null);
+  const buttonRef = useRef(null);
   const location = useLocation();
 
   useEffect(() => {
@@ -16,19 +17,28 @@ const NavBar = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  // close mobile menu on outside click
   useEffect(() => {
     const handleClickOutside = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
+      if (
+        isOpen && 
+        buttonRef.current && 
+        !buttonRef.current.contains(e.target) && 
+        menuRef.current && 
+        !menuRef.current.contains(e.target)
+      ) {
         setIsOpen(false);
       }
     };
+    
     document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  // close mobile menu on route change
+    document.addEventListener("touchstart", handleClickOutside);
+    
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
+    };
+  }, [isOpen]);
+  
   useEffect(() => {
     setIsOpen(false);
   }, [location]);
@@ -92,7 +102,10 @@ const NavBar = () => {
             className={`flex items-center text-[#0e68b1] hover:bg-[#0e68b1]/10 px-4 py-2 mx-1 rounded-md text-sm ${
               isSubMenuOpen ? "bg-[#0e68b1]/20" : ""
             } ${focusedIndex === index ? "ring-2 ring-[#0e68b1] ring-offset-2" : ""}`}
-            onClick={() => setIsSubMenuOpen((open) => !open)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsSubMenuOpen((open) => !open);
+            }}
             onKeyDown={(e) => handleKeyDown(e, index)}
             aria-expanded={isSubMenuOpen}
             aria-haspopup="true"
@@ -108,6 +121,7 @@ const NavBar = () => {
               focusedIndex === index ? "ring-2 ring-[#0e68b1] ring-offset-2" : ""
             }`}
             onKeyDown={(e) => handleKeyDown(e, index)}
+            onClick={(e) => e.stopPropagation()}
           >
             {link.text}
           </Link>
@@ -172,6 +186,7 @@ const NavBar = () => {
               to="/contact"
               className="ml-6 bg-[#0e68b1] text-white hover:bg-[#0e68b1]/90 px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 shadow-md hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
               aria-label="Contact Us"
+              onClick={(e) => e.stopPropagation()}
             >
               Contact Us
             </Link>
@@ -179,8 +194,11 @@ const NavBar = () => {
 
           {/* mobile hamburger */}
           <button
-            ref={menuRef}
-            onClick={() => setIsOpen((open) => !open)}
+            ref={buttonRef}
+            onClick={(e) => {
+              e.stopPropagation();
+              setIsOpen((open) => !open);
+            }}
             className="md:hidden text-[#0e68b1] p-2 hover:bg-[#0e68b1]/10 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
@@ -193,6 +211,7 @@ const NavBar = () => {
         {/* mobile menu */}
         {isOpen && (
           <div
+            ref={menuRef}
             id="mobile-menu"
             className="md:hidden bg-white shadow-lg rounded-lg mt-2 p-4"
             role="menu"
@@ -203,9 +222,10 @@ const NavBar = () => {
                 {link.submenu ? (
                   <>
                     <button
-                      onClick={() =>
-                        setActiveItem((cur) => (cur === link.text ? "" : link.text))
-                      }
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveItem((cur) => (cur === link.text ? "" : link.text));
+                      }}
                       className="block w-full text-left text-[#0e68b1] hover:bg-[#0e68b1]/10 px-3 py-2 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
                       aria-expanded={activeItem === link.text}
                       aria-controls={`mobile-submenu-${idx}`}
@@ -224,7 +244,8 @@ const NavBar = () => {
                             to={sub.href}
                             className="block text-[#0e68b1]/90 hover:bg-[#0e68b1]/10 px-3 py-2 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
                             role="menuitem"
-                            onClick={() => {
+                            onClick={(e) => {
+                              e.stopPropagation();
                               setIsOpen(false);
                               setActiveItem("");
                             }}
@@ -239,7 +260,10 @@ const NavBar = () => {
                   <Link
                     to={link.href}
                     className="block w-full text-left text-[#0e68b1] hover:bg-[#0e68b1]/10 px-3 py-2 text-sm rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
-                    onClick={() => setIsOpen(false)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setIsOpen(false);
+                    }}
                   >
                     {link.text}
                   </Link>
@@ -249,7 +273,10 @@ const NavBar = () => {
             <Link
               to="/contact"
               className="block text-[#0e68b1] bg-[#0e68b1]/20 hover:bg-[#0e68b1]/30 px-3 py-2 text-sm mt-2 rounded-md focus:outline-none focus:ring-2 focus:ring-[#0e68b1] focus:ring-offset-2"
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => {
+                e.stopPropagation();
+                setIsOpen(false);
+              }}
             >
               Contact Us
             </Link>
