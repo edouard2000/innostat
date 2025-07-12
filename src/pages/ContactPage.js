@@ -44,10 +44,7 @@ const ContactPage = () => {
               />
               <span className="text-lg text-white">+250 781685464</span>
             </div>
-            <div className="flex items-center">
-              <Mail className="w-6 h-6 mr-3 text-white" />
-              <span className="text-lg text-white">info@innostat.com</span>
-            </div>
+        
           </div>
           <div className="flex-1 bg-[#0e68b1] p-8 rounded-2xl shadow-lg border border-white/30">
             <h3 className="text-2xl font-bold mb-4 text-white">Social Media</h3>
